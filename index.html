@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MindWeb Tutors - Personalized Online Learning</title>
-    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Inter font --><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <!-- Load Lucide icons (for clean UI icons) --><script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Load Lucide icons (for clean UI icons) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         /* Custom font and base styling */
         body {
@@ -14,15 +17,10 @@
             scroll-behavior: smooth;
             background-color: #f7f9fc;
         }
-        .text-primary { color: #4f46e5; } /* Indigo 600 */
+        /* Define primary color (Indigo 600) for consistent branding */
+        .text-primary { color: #4f46e5; } 
         .bg-primary { background-color: #4f46e5; }
         .hover-primary:hover { background-color: #4338ca; } /* Indigo 700 */
-
-        /* Smooth scroll for sections */
-        .nav-link:target {
-            padding-top: 80px; /* Offset for fixed header */
-            margin-top: -80px;
-        }
 
         /* Responsive container for all sections */
         .section-container {
@@ -31,17 +29,26 @@
             margin-right: auto;
             padding: 3rem 1.5rem;
         }
+
+        /* Ensure smooth mobile menu transition using CSS */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
     </style>
 </head>
 <body class="text-gray-800">
 
-    <!-- Navbar (Sticky) --><header class="sticky top-0 z-50 bg-white shadow-lg">
+    <!-- Navbar (Sticky) -->
+    <header class="sticky top-0 z-50 bg-white shadow-lg">
         <div class="section-container flex justify-between items-center py-4 px-6 sm:px-4">
-            <!-- Logo --><a href="#" class="flex items-center">
-                <img src="Logo.png" alt="MindWeb Tutors Logo" class="h-10">
+            <!-- Logo -->
+            <a href="#" class="flex items-center">
+                <!-- Using a placeholder for the logo -->
+                <img src="Logo.png" alt="MindWeb Tutors Logo" class="h-10 rounded-lg">
             </a>
 
-            <!-- Desktop Navigation --><nav class="hidden lg:flex space-x-6 items-center">
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex space-x-6 items-center">
                 <a href="#hero" class="text-gray-600 hover:text-primary transition duration-150">Home</a>
                 <a href="#subjects" class="text-gray-600 hover:text-primary transition duration-150">Subjects</a>
                 <a href="#how-it-works" class="text-gray-600 hover:text-primary transition duration-150">How It Works</a>
@@ -52,21 +59,24 @@
                 </button>
             </nav>
 
-            <!-- Mobile Menu Button (Hamburger) --><button id="menu-button" class="lg:hidden text-gray-800 focus:outline-none">
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="menu-button" class="lg:hidden text-gray-800 focus:outline-none">
                 <i data-lucide="menu" class="w-7 h-7"></i>
             </button>
         </div>
 
-        <!-- Mobile Menu Overlay --><div id="mobile-menu" class="hidden lg:hidden fixed inset-0 bg-white z-40 transition-transform transform duration-300 translate-x-full">
+        <!-- Mobile Menu Overlay -->
+        <!-- Starts off-screen (translate-x-full) and hides itself (hidden) -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white z-40 transition-transform transform translate-x-full hidden">
             <div class="p-6 flex flex-col space-y-4">
                 <button id="close-menu-button" class="self-end text-gray-800">
                     <i data-lucide="x" class="w-7 h-7"></i>
                 </button>
-                <a href="#hero" class="text-xl py-2 border-b border-gray-100" onclick="hideMobileMenu()">Home</a>
-                <a href="#subjects" class="text-xl py-2 border-b border-gray-100" onclick="hideMobileMenu()">Subjects</a>
-                <a href="#how-it-works" class="text-xl py-2 border-b border-gray-100" onclick="hideMobileMenu()">How It Works</a>
-                <a href="#tutors" class="text-xl py-2 border-b border-gray-100" onclick="hideMobileMenu()">Tutors</a>
-                <a href="#about" class="text-xl py-2 border-b border-gray-100" onclick="hideMobileMenu()">About Us</a>
+                <a href="#hero" class="text-xl py-2 border-b border-gray-100 hover:text-primary" onclick="hideMobileMenu()">Home</a>
+                <a href="#subjects" class="text-xl py-2 border-b border-gray-100 hover:text-primary" onclick="hideMobileMenu()">Subjects</a>
+                <a href="#how-it-works" class="text-xl py-2 border-b border-gray-100 hover:text-primary" onclick="hideMobileMenu()">How It Works</a>
+                <a href="#tutors" class="text-xl py-2 border-b border-gray-100 hover:text-primary" onclick="hideMobileMenu()">Tutors</a>
+                <a href="#about" class="text-xl py-2 border-b border-gray-100 hover:text-primary" onclick="hideMobileMenu()">About Us</a>
                 <button onclick="showBookingMessage(); hideMobileMenu()" class="bg-primary hover-primary text-white px-5 py-3 rounded-xl font-semibold shadow-lg transition duration-300 mt-4">
                     Book A Session
                 </button>
@@ -75,9 +85,11 @@
     </header>
 
     <main>
-        <!-- Hero Section --><section id="hero" class="nav-link section-container pt-20 pb-16 bg-white rounded-b-3xl shadow-xl">
+        <!-- Hero Section -->
+        <section id="hero" class="nav-link section-container pt-20 pb-16 bg-white rounded-b-3xl shadow-xl">
             <div class="flex flex-col lg:flex-row items-center justify-between">
-                <!-- Text Content --><div class="lg:w-1/2 text-center lg:text-left mb-10 lg:mb-0">
+                <!-- Text Content -->
+                <div class="lg:w-1/2 text-center lg:text-left mb-10 lg:mb-0">
                     <span class="text-sm font-medium uppercase tracking-wider text-primary">One-on-One Virtual Tutoring</span>
                     <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mt-3 mb-6">
                         Unlock Your Potential. <span class="text-primary">Master Your MindWeb.</span>
@@ -88,23 +100,25 @@
                     <button onclick="showBookingMessage()" class="bg-primary hover-primary text-white text-xl px-10 py-4 rounded-full font-bold shadow-2xl shadow-indigo-400/50 transition duration-300 transform hover:scale-105">
                         Find Your Tutor Today
                     </button>
-                    <div class="mt-8 flex justify-center lg:justify-start space-x-6 text-sm font-medium text-gray-600">
+                    <div class="mt-8 flex flex-wrap justify-center lg:justify-start gap-y-2 gap-x-6 text-sm font-medium text-gray-600">
                         <span class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 mr-2 text-green-500"></i> Verified Tutors</span>
                         <span class="flex items-center"><i data-lucide="zap" class="w-5 h-5 mr-2 text-yellow-500"></i> Instant Scheduling</span>
                     </div>
                 </div>
 
-                <!-- Image Placeholder (Illustrative Image) --><div class="lg:w-5/12">
+                <!-- Image Placeholder (Illustrative Image) - Added w-full h-auto for responsiveness -->
+                <div class="lg:w-5/12 w-full">
                     <img src="banner.jpg" 
-                         alt="Illustration of a student learning online with a tutor" 
-                         class="rounded-3xl shadow-2xl border-4 border-white transform hover:rotate-1 transition duration-500"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/4f46e5/ffffff?text=Study+Success';"
+                        alt="Illustration of a student learning online with a tutor" 
+                        class="w-full h-auto rounded-3xl shadow-2xl border-4 border-white transform hover:rotate-1 transition duration-500"
+                        onerror="this.onerror=null; this.src='https://placehold.co/600x400/4f46e5/ffffff?text=Study+Success';"
                     >
                 </div>
             </div>
         </section>
 
-        <!-- Stats/Value Proposition Section --><section class="section-container py-12">
+        <!-- Stats/Value Proposition Section -->
+        <section class="section-container py-12">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div class="bg-white p-6 rounded-2xl shadow-xl border-t-4 border-primary">
                     <i data-lucide="award" class="w-10 h-10 text-primary mx-auto mb-3"></i>
@@ -124,24 +138,28 @@
             </div>
         </section>
 
-        <!-- How It Works Section --><section id="how-it-works" class="nav-link section-container py-20 bg-white">
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="nav-link section-container py-20 bg-white">
             <h2 class="text-4xl font-extrabold text-center mb-12">Simple Steps to Success</h2>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                <!-- Step 1 --><div class="text-center p-6 rounded-2xl border-2 border-indigo-100 shadow-md transition duration-300 hover:shadow-xl">
+                <!-- Step 1 -->
+                <div class="text-center p-6 rounded-2xl border-2 border-indigo-100 shadow-md transition duration-300 hover:shadow-xl">
                     <div class="bg-indigo-100 text-primary p-4 inline-flex rounded-full mb-4">
                         <i data-lucide="search" class="w-8 h-8"></i>
                     </div>
                     <p class="text-3xl font-bold mb-3">1. Select & Match</p>
                     <p class="text-gray-600">Browse detailed tutor profiles or let our system instantly match you with a vetted expert based on your specific needs.</p>
                 </div>
-                <!-- Step 2 --><div class="text-center p-6 rounded-2xl border-2 border-indigo-100 shadow-md transition duration-300 hover:shadow-xl">
+                <!-- Step 2 -->
+                <div class="text-center p-6 rounded-2xl border-2 border-indigo-100 shadow-md transition duration-300 hover:shadow-xl">
                     <div class="bg-indigo-100 text-primary p-4 inline-flex rounded-full mb-4">
                         <i data-lucide="calendar-check" class="w-8 h-8"></i>
                     </div>
                     <p class="text-3xl font-bold mb-3">2. Schedule & Learn</p>
                     <p class="text-gray-600">Book a time through our real-time calendar. Join our interactive online classroom, complete with whiteboard and session recordings.</p>
                 </div>
-                <!-- Step 3 --><div class="text-center p-6 rounded-2xl border-2 border-indigo-100 shadow-md transition duration-300 hover:shadow-xl">
+                <!-- Step 3 -->
+                <div class="text-center p-6 rounded-2xl border-2 border-indigo-100 shadow-md transition duration-300 hover:shadow-xl">
                     <div class="bg-indigo-100 text-primary p-4 inline-flex rounded-full mb-4">
                         <i data-lucide="trending-up" class="w-8 h-8"></i>
                     </div>
@@ -151,25 +169,31 @@
             </div>
         </section>
 
-        <!-- Featured Subjects Section --><section id="subjects" class="nav-link section-container py-20">
+        <!-- Featured Subjects Section -->
+        <section id="subjects" class="nav-link section-container py-20">
             <h2 class="text-4xl font-extrabold text-center mb-12">Our Most Popular Subjects</h2>
+            <!-- Grid automatically flows to 2 columns on small screens, 4 on medium/large -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Subject Card 1 --><div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] text-center">
+                <!-- Subject Card 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] text-center">
                     <i data-lucide="cpu" class="w-10 h-10 text-green-500 mx-auto mb-3"></i>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Advanced Mathematics</h3>
                     <p class="text-sm text-gray-500">Calculus, Linear Algebra, Statistics</p>
                 </div>
-                <!-- Subject Card 2 --><div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] text-center">
+                <!-- Subject Card 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] text-center">
                     <i data-lucide="microscope" class="w-10 h-10 text-red-500 mx-auto mb-3"></i>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Science & Lab Courses</h3>
                     <p class="text-sm text-gray-500">Chemistry, Physics, Biology (AP/College)</p>
                 </div>
-                <!-- Subject Card 3 --><div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] text-center">
+                <!-- Subject Card 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] text-center">
                     <i data-lucide="type" class="w-10 h-10 text-yellow-500 mx-auto mb-3"></i>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Writing & English</h3>
                     <p class="text-sm text-gray-500">Essay Critiques, Literature, Grammar</p>
                 </div>
-                <!-- Subject Card 4 --><div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] text-center">
+                <!-- Subject Card 4 -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] text-center">
                     <i data-lucide="gavel" class="w-10 h-10 text-blue-500 mx-auto mb-3"></i>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">History & Social Studies</h3>
                     <p class="text-sm text-gray-500">AP US/World History, Economics</p>
@@ -182,11 +206,14 @@
             </div>
         </section>
 
-        <!-- Tutors Section (Mock Profiles) --><section id="tutors" class="nav-link section-container py-20 bg-indigo-50 rounded-t-3xl">
+        <!-- Tutors Section (Mock Profiles) -->
+        <section id="tutors" class="nav-link section-container py-20 bg-indigo-50 rounded-t-3xl">
             <h2 class="text-4xl font-extrabold text-center mb-12">Meet Our 5-Star Tutors</h2>
+            <!-- Grid automatically flows to 1 column on small screens, 2 on medium, 3 on large -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- Tutor 1 --><div class="bg-white p-6 rounded-2xl shadow-xl text-center">
+                <!-- Tutor 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-xl text-center">
                     <img src="https://placehold.co/120x120/4f46e5/ffffff?text=JK" alt="Tutor Jane Kim" class="rounded-full w-24 h-24 object-cover mx-auto mb-4 border-4 border-primary">
                     <h3 class="text-2xl font-bold text-gray-900">Jane Kim, Ph.D.</h3>
                     <p class="text-primary font-medium mb-3">AP Physics & College Engineering</p>
@@ -200,7 +227,8 @@
                     <button onclick="showBookingMessage()" class="w-full bg-primary hover-primary text-white py-2 rounded-xl transition duration-300">View Profile</button>
                 </div>
 
-                <!-- Tutor 2 --><div class="bg-white p-6 rounded-2xl shadow-xl text-center">
+                <!-- Tutor 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-xl text-center">
                     <img src="https://placehold.co/120x120/4f46e5/ffffff?text=AS" alt="Tutor Alex Smith" class="rounded-full w-24 h-24 object-cover mx-auto mb-4 border-4 border-primary">
                     <h3 class="text-2xl font-bold text-gray-900">Alex Smith, M.A.</h3>
                     <p class="text-primary font-medium mb-3">High School Literature & SAT Prep</p>
@@ -214,7 +242,8 @@
                     <button onclick="showBookingMessage()" class="w-full bg-primary hover-primary text-white py-2 rounded-xl transition duration-300">View Profile</button>
                 </div>
 
-                <!-- Tutor 3 --><div class="bg-white p-6 rounded-2xl shadow-xl text-center">
+                <!-- Tutor 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-xl text-center">
                     <img src="https://placehold.co/120x120/4f46e5/ffffff?text=MB" alt="Tutor Maria Benitez" class="rounded-full w-24 h-24 object-cover mx-auto mb-4 border-4 border-primary">
                     <h3 class="text-2xl font-bold text-gray-900">Maria Benitez, B.S.</h3>
                     <p class="text-primary font-medium mb-3">Middle School Math & Spanish</p>
@@ -235,7 +264,8 @@
             </div>
         </section>
 
-        <!-- Testimonial Section --><section class="section-container py-20">
+        <!-- Testimonial Section -->
+        <section class="section-container py-20">
             <h2 class="text-4xl font-extrabold text-center mb-12">What Parents Are Saying</h2>
             <div class="max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-2xl border-l-8 border-primary">
                 <blockquote class="text-xl italic text-gray-700">
@@ -247,30 +277,37 @@
             </div>
         </section>
 
-        <!-- About Us Section --><section id="about" class="nav-link section-container py-20 bg-primary/90 text-black rounded-t-3xl">
+        <!-- About Us Section - Text color changed to white for contrast -->
+        <section id="about" class="nav-link section-container py-20 bg-primary/90 text-black rounded-t-3xl">
             <div class="text-center max-w-3xl mx-auto">
                 <h2 class="text-4xl font-extrabold mb-6">Our Mission</h2>
                 <p class="text-xl font-light mb-8">
                     MindWeb Tutors was founded by dedicated educators with a vision: to provide accessible, high-quality, and deeply personalized education that helps every student master their unique learning path. We believe in building confidence as much as knowledge.
                 </p>
-                <div class="flex justify-center space-x-6">
-                    <span class="flex items-center text-lg font-medium"><i data-lucide="target" class="w-6 h-6 mr-2"></i> Personalization</span>
-                    <span class="flex items-center text-lg font-medium"><i data-lucide="shield-check" class="w-6 h-6 mr-2"></i> Vetted Experts</span>
-                    <span class="flex items-center text-lg font-medium"><i data-lucide="globe" class="w-6 h-6 mr-2"></i> Accessibility</span>
+                <!-- Use gap-y-2 for better stacking on mobile -->
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <span class="flex items-center text-lg font-medium justify-center"><i data-lucide="target" class="w-6 h-6 mr-2"></i> Personalization</span>
+                    <span class="flex items-center text-lg font-medium justify-center"><i data-lucide="shield-check" class="w-6 h-6 mr-2"></i> Vetted Experts</span>
+                    <span class="flex items-center text-lg font-medium justify-center"><i data-lucide="globe" class="w-6 h-6 mr-2"></i> Accessibility</span>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer --><footer class="bg-gray-800 text-white py-12">
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
         <div class="section-container">
+            <!-- Footer grid is responsive (2 columns on mobile, 4 on medium/desktop) -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <!-- Column 1: Logo & Mission --><div>
-                    <img src="Logo.png" alt="MindWeb Tutors Logo" class="h-10 mb-3">
+                <!-- Column 1: Logo & Mission -->
+                <div>
+                    <!-- Using a placeholder for the logo -->
+                    <img src="Logo.png" alt="MindWeb Tutors Logo" class="h-10 mb-3 rounded-lg">
                     <p class="text-sm text-gray-400">Mastering learning, one personalized session at a time.</p>
                 </div>
 
-                <!-- Column 2: Quick Links --><div>
+                <!-- Column 2: Quick Links -->
+                <div>
                     <h4 class="text-lg font-semibold mb-4 border-b border-indigo-500 pb-1">Quick Links</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
                         <li><a href="#how-it-works" class="hover:text-primary transition">How It Works</a></li>
@@ -279,7 +316,8 @@
                     </ul>
                 </div>
 
-                <!-- Column 3: Subjects --><div>
+                <!-- Column 3: Subjects -->
+                <div>
                     <h4 class="text-lg font-semibold mb-4 border-b border-indigo-500 pb-1">Popular Subjects</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
                         <li><a href="#subjects" class="hover:text-primary transition">AP Calculus</a></li>
@@ -288,7 +326,8 @@
                     </ul>
                 </div>
 
-                <!-- Column 4: Contact --><div>
+                <!-- Column 4: Contact -->
+                <div>
                     <h4 class="text-lg font-semibold mb-4 border-b border-indigo-500 pb-1">Get In Touch</h4>
                     <p class="text-sm text-gray-400">Email: <a href="mailto:support@mindwebtutors.com" class="hover:text-primary">support@mindwebtutors.com</a></p>
                     <p class="text-sm text-gray-400 mt-2">Phone: (555) 123-4567</p>
@@ -306,7 +345,8 @@
         </div>
     </footer>
 
-    <!-- Custom Modal/Message Box (Replaces alert()) --><div id="custom-modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-[100] hidden">
+    <!-- Custom Modal/Message Box (Replaces alert()) -->
+    <div id="custom-modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-[100] hidden">
         <div class="bg-white p-8 rounded-xl shadow-2xl max-w-sm w-full transform transition-all duration-300 scale-95">
             <div class="text-center">
                 <div class="bg-primary/10 text-primary p-3 rounded-full inline-block mb-4">
@@ -335,11 +375,19 @@
         function toggleMobileMenu() {
             const isHidden = mobileMenu.classList.contains('hidden');
             if (isHidden) {
+                // Show menu: remove hidden, then remove translation after a short delay for CSS transition to apply
                 mobileMenu.classList.remove('hidden');
-                setTimeout(() => mobileMenu.classList.remove('translate-x-full'), 10);
+                // Use a short delay before removing translate-x-full to allow the transition property to take effect
+                requestAnimationFrame(() => {
+                    mobileMenu.classList.remove('translate-x-full');
+                });
             } else {
+                // Hide menu: add translation, then add hidden after transition is complete
                 mobileMenu.classList.add('translate-x-full');
-                setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+                mobileMenu.addEventListener('transitionend', function handler() {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.removeEventListener('transitionend', handler);
+                }, { once: true });
             }
         }
 
